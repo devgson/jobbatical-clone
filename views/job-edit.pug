@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  section.container-fluid
+    .jumbotron.text-center
+      h2 Welcome 
+        span.text-uppercase #{name}
+    .form-container.col-md-8.col-md-offset-2
+      .form-header
+        h1.text-center Edit Job Posting
+      form(action="/edit", method="post")
+        .row
+          .form-group.col-sm-6
+            label(for="title") Title:
+            input(type="hidden", name="id", value=job._id)
+            input.form-control#job-title(type="text", name="jobTitle" value=job.jobTitle , required)
+          .form-group.col-sm-6
+            label(for="date-limit") Date Limit
+              -var dateObj = new Date(job.date);
+              -var month = dateObj.getUTCMonth() + 1; 
+              -var day = dateObj.getUTCDate();
+              -var year = dateObj.getUTCFullYear();
+              -var newdate = year + "-" + month + "-" + day;
+            input.form-control#date-limit(type="date", name="date", value=newdate required)
+        .row
+          .form-group.col-sm-6
+            label(for="location") Location
+            input.form-control#location(type="text", name="location", value=job.location required)
+          .form-group.col-sm-6
+            label(for="salary") Salary
+            input.form-control#salary(type="text", name="salary", value=job.salary required)
+        .form-group
+          label(for="company-description") Company Description
+          textarea.form-control#company-description(name="companyDescription" required) #{job.companyDescription}
+        .form-group
+          label(for="company-name") Company Name
+          textarea.form-control#company-name(name="companyName", required) #{job.companyName}
+        .form-group
+          label(for="job-description") Job Description
+          textarea.form-control#job-description(name="jobDescription", required) #{job.jobDescription}
+        .form-group
+          label(for="responsibiities")  Responsibilities
+          textarea.form-control#responsibilities(name="responsibilities", required) #{job.responsibilities}
+        .form-group
+          label(for="requirements") Job Requirements
+          textarea.form-control#requirements(name="requirements", required) #{job.requirements}
+        .form-footer.form-group.pull-right
+          button.btn.btn-jobbatical(type="submit" required) Submit

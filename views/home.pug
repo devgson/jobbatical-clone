@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  header
+    .container
+      .row
+        .col-md-12.text-center
+          h1.super-title Hire Talent
+          a(href="/job-form" id="landing-button-post-job" class="btn btn-primary btn-lg landing-button")
+            i(class="fa fa-users fa-lg" aria-hidden=true)
+              span.landing-button-text Post a Job
+          a(href="/explore" id="landing-button-explore" class="btn btn-primary btn-lg landing-button")
+            i.fa.fa-search.fa-lg(aria-hidden="true")
+              span.landing-button-text Explore Jobs
+          p.sub-text
+            span.sub-inner-text #{job} Available Jobs in 
+            |
+            span.sub-inner-text #{company} Companies
+  section
+    .container
+      //-h2.section-title Featured Jobs
+          //-<% featuredJobs.forEach( (element, index) => {
+            if (element.jobTitle && element.location){ %>
+        .col-xs-12.feature-card
+          a(href="")
+            img(src='/images>' class='img-responsive img-rounded job-photo')
+              .feature-text.text-uppercase
+                h4(class='job-title')
+                  p(class='text-faded'/p>
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                //-<% }); %>
+            
+            <div class="view-jobs">
+                <a href="/explore" class="btn btn-lg btn-jobbatical">Explore jobs</a>
+            </div>
+        </section>

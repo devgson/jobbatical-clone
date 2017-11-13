@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .container
+    .form-container.col-md-offset-2.col-md-offset-8.col-xs-12
+      .row
+        .col-md-10.col-md-offset-1.col-xs-12
+          .job-group
+            h1.text-uppercase #{job.jobTitle}
+            h3.text-uppercase.text-faded At
+            p Expires : #[strong #{job.date.toLocaleString('en-Us', { year : 'numeric', month : 'long', day : 'numeric'})}]
+      .row
+        .col-md-10.col-md-offset-1.col-xs-12
+          .job-group
+            h3 Salary : #[strong #{job.salary}] 
+      .row
+        .col-md-10.col-md-offset-1.col-xs-12
+          .job-group
+            h3 #[strong] Job Description
+            p #{job.jobDescription}
+      .row
+        .col-md-10.col-md-offset-1.col-xs-12
+          .job-group
+            h3 #[strong] Responsibilities
+            p #{job.responsibilities}
+      .row
+        .col-md-10.col-md-offset-1.col-xs-12
+          .job-group
+            h3 #[strong] Requirements
+            p #{job.requirements}
+      .row
+        .col-md-10.col-md-offset-1.col-xs-12
+          .job-group
+            h3 #[strong] About Evotech
+            p #{job.companyDescription}

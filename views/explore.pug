@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  header#search-wrapper
+    .container
+      .row
+        .col-xs-12.col-md-8.col-md-offset-2.text-center
+          h1.super-title Explore Jobs
+          form(action="/explore", method="post")
+            input.form-control(type="text", name="title", placeholder="Search By job title")
+            button.btn.btn-jobbatical(type="submit") Search
+  
+  section
+    .container
+      each jobs in job
+        .col-xs-12.feature-card
+          a(href="/job-details/?id="+jobs._id)
+            img.img-responsive.img-rounded.job-photo(src="/images/photo2.jpeg", alt="")
+            .feature-text.text-uppercase
+              h4(class="job-title")= jobs.jobTitle
+              p(class="text-faded") Application closes : #{jobs.date.toLocaleString('en-us', options)}
+      else
+        .col-xs-12.text-center
+          p No Available Jobs
+          a.btn.btn-jobbatical(href="/job-form") Go here to Post Jobs
+  
+  .view-jobs
+    a.btn.btn-jobbatical(href="#") View more jobs

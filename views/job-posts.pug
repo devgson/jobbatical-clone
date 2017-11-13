@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  header#search-wrapper
+    .container
+      .row
+        .col-xs-12.col-md-8.col-md-offset-2.text-center
+          h1.super-title Available Job Posts
+
+  section
+    .container
+      each job in users
+        .col-xs-12.feature-card
+          a(href="/job-details/?id=" + job._id)
+            img.img-responsive.img-rounded.job-photo(src="/images/photo2.jpeg", alt="")
+            .feature-text.text-uppercase
+              h4(class="job-title")= job.jobTitle
+              p(class="text-faded")= job.date.toLocaleString('en-us', options)
+            .row
+              .col-md-6.col-xs-6.col-sm-6.text-center.edit
+                a.btn.btn-info.botn(href="/edit?id="+job._id) Edit
+              .col-md-6.col-xs-6.col-sm-6.text-center.edit
+                a.btn.btn-danger.botn(href="/delete?id="+job._id , onclick="return confirm('Sure?')") Delete
+      else
+        .col-xs-12.text-center
+          p No Available Jobs
+          a.btn.btn-jobbatical(href="/job-form") Go here to Post Jobs
+
+  .view-jobs
+    a.btn.btn-jobbatical(href="#") View more jobs

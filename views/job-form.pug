@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  section.container-fluid
+    .jumbotron.text-center
+      h2 Welcome 
+        span.text-uppercase #{name}
+    .form-container.col-md-8.col-md-offset-2
+      .form-header
+        h1.text-center Post a Job
+      form(action="/job-form", method="post")
+        .row
+          .form-group.col-sm-6
+            label(for="title") Title:
+            input.form-control#job-title(type="text", name="jobTitle" required)
+          .form-group.col-sm-6
+            label(for="date-limit") Date Limit
+            input.form-control#date-limit(type="date", name="date" required)
+        .row
+          .form-group.col-sm-6
+            label(for="location") Location
+            input.form-control#location(type="text", name="location" required)
+          .form-group.col-sm-6
+            label(for="salary") Salary
+            input.form-control#salary(type="text", name="salary" required)
+        .form-group
+          label(for="company-description") Company Description
+          textarea.form-control#company-description(name="companyDescription" required)
+        .form-group
+          label(for="company-name") Company Name
+          textarea.form-control#company-name(name="companyName" required)
+        .form-group
+          label(for="job-description") Job Description
+          textarea.form-control#job-description(name="jobDescription" required)
+        .form-group
+          label(for="responsibiities")  Responsibilities
+          textarea.form-control#responsibilities(name="responsibilities" required)
+        .form-group
+          label(for="requirements") Job Requirements
+          textarea.form-control#requirements(name="requirements" required)
+        .form-footer.form-group.pull-right
+          button.btn.btn-jobbatical(type="submit" required) Submit
