@@ -10,9 +10,15 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
     routes = require('./app/routes/routes');
+
+mongoose.Promise = global.Promise;
     
-mongoose.connect('mongodb://127.0.0.1:27017/jobbatical', {
+mongoose.connect('mongodb://jobbatical:jobbatical@ds257485.mlab.com:57485/jobbatical', {
   useMongoClient : true
+});
+
+mongoose.connection.on('error', function(error){
+  console.log(error);
 });
 
 app.set('view engine', 'pug');
