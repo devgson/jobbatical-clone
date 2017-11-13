@@ -1,25 +1,26 @@
 {
-  "name": "bears-team-10-jobbatical-clone",
+  "name": "jobbatical",
   "version": "1.0.0",
-  "description": "clone of a jobs board app",
+  "description": "clone of jobbatical",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bears-team-10/jobbatical-clone.git"
+    "url": "git+https://github.com/gson007/jobbatical-clone.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bears-team-10/jobbatical-clone/issues"
+    "url": "https://github.com/gson007/jobbatical-clone/issues"
   },
-  "homepage": "https://github.com/bears-team-10/jobbatical-clone#readme",
+  "homepage": "https://github.com/gson007/jobbatical-clone#readme",
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.17.2",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.7",

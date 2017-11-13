@@ -9,7 +9,8 @@ const express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
-    routes = require('./app/routes/routes');
+    routes = require('./app/routes/routes'),
+    connectMongo = require('connect-mongo')(session);
 
 mongoose.Promise = global.Promise;
     
@@ -34,7 +35,10 @@ app.use(express.static( __dirname + '/public' ));
 
 app.use(cookieParser());
 app.use(session({ 
-  secret: 'testing'
+  secret: 'testing',
+  store : new connectMongo({
+    mongooseConnection : mongoose.connection
+  })
 })); // session secret
 
 app.use(function(req, res, next){
