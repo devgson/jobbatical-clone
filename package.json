@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "clone of jobbatical",
   "main": "server.js",
+  "now" : {
+    "dotenv" : "variables.env"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
