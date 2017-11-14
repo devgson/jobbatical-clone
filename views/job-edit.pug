@@ -1,5 +1,14 @@
 extends layout
 
+block append css
+  link(rel="stylesheet", href="/vendors/css/trumbowyg.min.css")
+
+block append scripts
+  script(src="/vendors/js/trumbowyg.min.js")
+  //script(src="/vendors/js/trumbowyg.preformatted.min.js")
+  script(src="/vendors/js/code.js")
+  
+
 block content
   section.container-fluid
     .jumbotron.text-center
