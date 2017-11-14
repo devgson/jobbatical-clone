@@ -12,12 +12,14 @@ const express = require('express'),
     routes = require('./app/routes/routes'),
     connectMongo = require('connect-mongo')(session);
 
-require('dotenv').config({ path : 'variables.env' });
+//require('dotenv').config({ path : 'variables.env' });
 mongoose.Promise = global.Promise;
 
-var database = 'mongodb://127.0.0.1:27017/jobbatical';
+
+var localDB = 'mongodb://127.0.0.1:27017/jobbatical';
 var mlab = 'mongodb://jobbatical:jobbatical@ds257485.mlab.com:57485/jobbatical';
-mongoose.connect(mlab, {
+var database = process.env.DATABASE || localDB; 
+mongoose.connect(database, {
   useMongoClient : true
 });
 
