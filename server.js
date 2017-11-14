@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 
 var database = 'mongodb://127.0.0.1:27017/jobbatical';
 var mlab = 'mongodb://jobbatical:jobbatical@ds257485.mlab.com:57485/jobbatical';
-mongoose.connect(database, {
+mongoose.connect(mlab, {
   useMongoClient : true
 });
 
