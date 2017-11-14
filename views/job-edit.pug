@@ -8,7 +8,7 @@ block content
     .form-container.col-md-8.col-md-offset-2
       .form-header
         h1.text-center Edit Job Posting
-      form(action="/edit", method="post")
+      form(action="/edit", method="post" name="form" novalidate)
         .row
           .form-group.col-sm-6
             label(for="title") Title:
