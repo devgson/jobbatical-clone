@@ -16,7 +16,7 @@ router.get('/signout', paths.signout);
 
 router.get('/job-posts', paths.checkSession, paths.jobposts);
 
-router.get('/job-details', paths.checkSession, paths.jobdetails);
+router.get('/job-details', paths.jobdetails);
 
 router.get('/delete', paths.delete);
 

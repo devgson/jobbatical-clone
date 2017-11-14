@@ -14,8 +14,10 @@ const express = require('express'),
 
 require('dotenv').config({ path : 'variables.env' });
 mongoose.Promise = global.Promise;
-    
-mongoose.connect('mongodb://jobbatical:jobbatical@ds257485.mlab.com:57485/jobbatical', {
+
+var database = 'mongodb://127.0.0.1:27017/jobbatical';
+var mlab = 'mongodb://jobbatical:jobbatical@ds257485.mlab.com:57485/jobbatical';
+mongoose.connect(database, {
   useMongoClient : true
 });
 
